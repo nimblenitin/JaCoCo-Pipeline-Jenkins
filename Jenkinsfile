@@ -1,5 +1,6 @@
 pipeline {
-  agent any stages {
+  agent any 
+  stages {
     stage("Compile") {
       steps {
         sh "mvn compile"
@@ -13,7 +14,11 @@ pipeline {
   }
   post {
     always {
-      step([$class: 'JacocoPublisher', execPattern: 'target/*.exec', classPattern: 'target/classes', sourcePattern: 'src/main/java', exclusionPattern: 'src/test*'])
+      step([$class: 'JacocoPublisher', 
+            execPattern: 'target/*.exec', 
+            classPattern: 'target/classes', 
+            sourcePattern: 'src/main/java', 
+            exclusionPattern: 'src/test*'])
     }
   }
 }
