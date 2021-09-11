@@ -1,7 +1,8 @@
 package com.nitin.ReviewAnalyser;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-@SpringBootApplicationpublic class ReviewAnalyserApplication {
+@SpringBootApplication
+public class ReviewAnalyserApplication {
     public static double getWordCount(String review) {
         int count = 0;
         String string[] = review.toLowerCase().split("([,.\\s]+)");
